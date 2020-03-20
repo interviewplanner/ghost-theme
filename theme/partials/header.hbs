@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="navbar">
+    <div class="title">
+      <a href="https://interviewplanner.com">
+        <img alt="InterviewPlanner" class="logo" src="https://interviewplanner.com/src/assets/images/logo.svg">
+      </a>
+      <a class="blog-link" href="{{@site.url}}">
+        <i class="fas fa-rss"></i> Blog
+      </a>
+    </div>
+    <div class="tag-links">
+      {{#get "tags" limit="3"}}
+      {{#foreach tags}}
+      <a href="{{url}}" title="Posts tagged with {{name}}" class="tag-link">{{name}}</a>
+      {{/foreach}}
+      {{/get}}
+    </div>
+  </div>
+</header>

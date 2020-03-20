@@ -1,0 +1,25 @@
+{
+  "name": "interviewplanner",
+  "description": "Ghost theme for the InterviewPlanner blog",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "gscan $(pwd)/ghost/content/themes/interviewplanner",
+    "setup": "yarn setup:ghost && yarn setup:theme",
+    "setup:ghost": "rm -rf ghost && ghost install 3.4.0 --local --dir ghost --no-start --no-enable --no-prompt",
+    "setup:theme": "ln -sf $(pwd)/theme $(pwd)/ghost/content/themes/interviewplanner && ln -f $(pwd)/package.json $(pwd)/theme",
+    "start": "ghost run --dir ghost --development"
+  },
+  "repository": "git@github.com:interviewplanner/ghost-theme",
+  "keywords": [
+    "ghost-theme"
+  ],
+  "author": {
+    "name": "InterviewPlanner",
+    "email": "hello@interviewplanner.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ghost-cli": "^1.13.1",
+    "gscan": "^3.4.0"
+  }
+}
