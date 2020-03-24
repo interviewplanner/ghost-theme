@@ -3,10 +3,15 @@
   "description": "Ghost theme for the InterviewPlanner blog",
   "version": "1.0.0",
   "scripts": {
+    "bundle": "rm -rf theme/node_modules && yarn --production && zip -r interviewplanner-$(cat package.json | grep '\"version\"' | cut -d '\"' -f4).zip theme",
     "lint": "gscan $(pwd)/ghost/content/themes/interviewplanner",
-    "setup": "yarn setup:ghost && yarn setup:theme",
+    "release:major": "yarn version --major && git push origin --tags && npm run setup:package",
+    "release:minor": "yarn version --minor && git push origin --tags && npm run setup:package",
+    "release:patch": "yarn version --patch && git push origin --tags && npm run setup:package",
+    "setup": "yarn setup:ghost && yarn setup:link && yarn setup:package",
     "setup:ghost": "rm -rf ghost && ghost install 3.4.0 --local --dir ghost --no-start --no-enable --no-prompt",
-    "setup:theme": "ln -sf $(pwd)/theme $(pwd)/ghost/content/themes/interviewplanner && ln -f $(pwd)/package.json $(pwd)/theme",
+    "setup:link": "ln -sf $(pwd)/theme $(pwd)/ghost/content/themes/interviewplanner",
+    "setup:package": "cd theme && ln -f ../package.json .",
     "start": "ghost run --dir ghost --development"
   },
   "repository": "git@github.com:interviewplanner/ghost-theme",
@@ -15,11 +20,15 @@
   ],
   "author": {
     "name": "InterviewPlanner",
-    "email": "hello@interviewplanner.com"
+    "email": "hello@interviewplanner.com",
+    "url": "https://interviewplanner.com"
   },
   "license": "MIT",
   "devDependencies": {
     "ghost-cli": "^1.13.1",
     "gscan": "^3.4.0"
+  },
+  "config": {
+    "posts_per_page": 10
   }
 }

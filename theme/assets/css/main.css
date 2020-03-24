@@ -7,13 +7,16 @@
   --mercury-gray: #E6E6E6;
 
   /* Backgrounds */
-  --white: #FFFFFF;
+  --white:           #FFFFFF;
   --alabaster-white: #F8F8F8;
 
   /* Text */
   --mineshaft-black: #2A2A2A;
   --dove-gray:       #666666;
   --zodiac-blue:     #132C4C;
+
+  /* Icons */
+  --silver-gray: #CECECE;
 }
 
 body {
@@ -57,6 +60,7 @@ h2 {
 
 h3 {
   font-family: 'Red Hat Display', sans-serif;
+  font-size: 1.25em;
   font-weight: bold;
   letter-spacing: .02em;
 }
@@ -78,6 +82,14 @@ p {
   line-height: 1.8em;
 }
 
+pre {
+  background: var(--alabaster-white);
+  border-radius: 1px;
+  line-height: 1.3em;
+  padding: 1em;
+  overflow: scroll;
+}
+
 .category-tag {
   align-items: center;
   background: var(--foam-blue);
@@ -93,6 +105,29 @@ p {
   text-transform: uppercase;
   white-space: nowrap;
   width: max-content;
+}
+
+/* Social Icons */
+.social-icon {
+  color: var(--silver-gray);
+  height: 1em;
+  margin: .5em;
+}
+.social-icon:hover {
+  transition: transform .2s;
+  transform: scale(1.5);
+}
+.icon-facebook:hover {
+  color: #3B5998;
+}
+.icon-twitter:hover {
+  color: #1DA1F2;
+}
+.icon-linkedin:hover {
+  color: #0072B1;
+}
+.icon-email:hover {
+  color: var(--curious-blue);
 }
 
 /* Header */
@@ -160,6 +195,11 @@ p {
 .header .navbar .tag-links .tag-link:hover {
   border-bottom: 2px solid var(--curious-blue);
   color: var(--bay-blue);
+}
+@media (max-width: 795px) {
+  .header .navbar .tag-links {
+    display: none;
+  }
 }
 
 /* Main Content */
@@ -330,6 +370,7 @@ a.post-card-excerpt-read-more-link:hover {
   max-width: 1000px;
   overflow: hidden;
   margin: 2em;
+  width: 90%;
 }
 .post p {
   line-height: 2;
@@ -394,19 +435,18 @@ a.post-card-excerpt-read-more-link:hover {
   display: flex;
   margin: 0 .5em;
 }
-.share-icon {
-  margin: .5em;
-}
-.icon-facebook {
-  color: #3B5998;
-}
-.icon-twitter {
-  color: #1DA1F2;
-}
 @media (min-width: 795px) {
   .post {
     margin: 4em 5em;
   }
+}
+
+/* Post Images */
+.post .kg-image {
+  max-width: 100%;
+}
+.post pre {
+  max-width: 100%;
 }
 
 /* Tag Page */
@@ -435,13 +475,20 @@ a.post-card-excerpt-read-more-link:hover {
   min-width: 150px;
   padding: 10px;
 }
-.footer .footer-section a {
+.footer .logo-section .social-links {
+  align-items: center;
+  display: flex;
+}
+.footer .logo-section .social-icon {
+  padding: 0;
+}
+.footer .links-section a {
   color: inherit;
   font-weight: normal;
   padding: 5px;
   text-decoration: none;
 }
-.footer .footer-section a:hover {
+.footer .links-section a:hover {
   color: var(--bay-blue);
   text-decoration: underline;
   transition: .2s text-decoration linear;
