@@ -3,19 +3,26 @@
     <a href="https://interviewplanner.com">
       <img alt="InterviewPlanner" class="logo" src="https://interviewplanner.com/src/assets/images/logo.svg">
     </a>
+    <div class="social-links">
+      {{#if @site.twitter}}
+      <a class="social-icon icon-twitter" href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener"><i class="fa fa-twitter"></i></a>
+      {{/if}}
+      <a class="social-icon icon-linkedin" href="https://linkedin.com/company/interviewplanner" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+      <a class="social-icon icon-email" href="mailto:hello@interviewplanner.com" title="Email" target="_blank" rel="noopener"><i class="fa fa-envelope"></i></a>
+    </div>
   </div>
-  <div class="footer-section">
+  <div class="footer-section links-section">
     <h6>Product</h6>
     <a href="https://interviewplanner.com/#features">Features</a>
     <a href="https://interviewplanner.com/pricing">Pricing</a>
   </div>
-  <div class="footer-section">
+  <div class="footer-section links-section">
     <h6>Company</h6>
     <a href="https://interviewplanner.com/about">About</a>
     <a href="https://interviewplanner.com/roadmap">Roadmap</a>
     <a href="https://interviewplanner.com/blog">Blog</a>
   </div>
-  <div class="footer-section">
+  <div class="footer-section links-section">
     <h6>Resources</h6>
     <a href="https://interviewplanner.com/contact">Contact</a>
     <a href="https://interviewplanner.com/terms">Terms</a>
