@@ -23,6 +23,9 @@
     "email": "hello@interviewplanner.com",
     "url": "https://interviewplanner.com"
   },
+  "engines": {
+    "ghost-api": "v3"
+  },
   "license": "MIT",
   "devDependencies": {
     "ghost-cli": "^1.13.1",
