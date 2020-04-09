@@ -1,7 +1,7 @@
 {
   "name": "interviewplanner",
   "description": "Ghost theme for the InterviewPlanner blog",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "bundle": "rm -rf theme/node_modules && yarn --production && zip -r interviewplanner-$(cat package.json | grep '\"version\"' | cut -d '\"' -f4).zip theme",
     "lint": "gscan $(pwd)/ghost/content/themes/interviewplanner",
