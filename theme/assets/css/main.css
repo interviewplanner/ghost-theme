@@ -44,6 +44,14 @@ blockquote {
   padding-left: 2em;
 }
 
+figcaption {
+  color: var(--dove-gray);
+  font-size: .9em;
+  font-style: italic;
+  line-height: 1.8em;
+  text-align: center;
+}
+
 h1 {
   font-family: 'Red Hat Display', sans-serif;
   font-size: 3em;
