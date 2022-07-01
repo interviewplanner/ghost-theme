@@ -9,7 +9,7 @@
     "release:minor": "yarn version --minor && git push origin && git push origin --tags && npm run setup:package",
     "release:patch": "yarn version --patch && git push origin && git push origin --tags && npm run setup:package",
     "setup": "yarn setup:ghost && yarn setup:link && yarn setup:package",
-    "setup:ghost": "rm -rf ghost && ghost install 3.4.0 --local --dir ghost --no-start --no-enable --no-prompt",
+    "setup:ghost": "rm -rf ghost && ghost install 5.2.3 --local --dir ghost --no-start --no-enable --no-prompt",
     "setup:link": "ln -sf $(pwd)/theme $(pwd)/ghost/content/themes/interviewplanner",
     "setup:package": "cd theme && ln -f ../package.json .",
     "start": "ghost run --dir ghost --development"
@@ -23,15 +23,13 @@
     "email": "hello@interviewplanner.com",
     "url": "https://interviewplanner.com"
   },
-  "engines": {
-    "ghost-api": "v3"
-  },
   "license": "MIT",
   "devDependencies": {
-    "ghost-cli": "^1.13.1",
-    "gscan": "^3.4.0"
+    "ghost-cli": "^1.21.0",
+    "gscan": "^4.31.2"
   },
   "config": {
+    "card_assets": true,
     "posts_per_page": 10
   }
 }
